@@ -1,0 +1,25 @@
+{
+  "name": "my-portfolio",
+  "version": "1.0.0",
+  "description": "Portfolio site for Javier Cueto, Full-Stack Web Developer",
+  "main": "index.html",
+  "scripts": {
+    "test": "dev"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Buraburaite/my-portfolio.git"
+  },
+  "author": "Javier Cueto",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Buraburaite/my-portfolio/issues"
+  },
+  "homepage": "https://github.com/Buraburaite/my-portfolio#readme",
+  "dependencies": {
+    "gulp": "^3.9.1"
+  },
+  "devDependencies": {
+    "gulp-livereload": "^3.8.1"
+  }
+}
