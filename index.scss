@@ -8,37 +8,27 @@ body {
 }
 
 .game-container {
+  width: 100vw;
+  height: 80vh;
+  perspective: 0em;
 
   .platform {
-    width: 20vw;
-    height: 10vw;
+    width: 20%;
+    height: 20%;
     display: inline-block;
     position: absolute;
     z-index: 1;
-    transition: all 1s ease-in;
-    transform: perspective(20em) rotateX(60deg);
-
-    &:hover {
-      transform: perspective(0em) rotateX(0deg);
-      width: 80vw;
-      height: 80vh;
-      z-index: 10;
-      left: 0%;
-    }
   }
 
   .about {
-    left: 0%;
+    left: 30%;
     background-color: red;
   }
 
-  .tech {
-    left: 30%;
-    background-color: blue;
-  }
+  .nav-div {
+    width: 30px;
+    height: 30px;
+    background-color: yellow;
 
-  .projects {
-    left: 60%;
-    background-color: purple;
   }
 }
