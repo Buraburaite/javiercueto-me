@@ -1,0 +1,44 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-size: 20px;
+  font-family: arial;
+}
+
+.game-container {
+
+  .platform {
+    width: 20vw;
+    height: 10vw;
+    display: inline-block;
+    position: absolute;
+    z-index: 1;
+    transition: all 1s ease-in;
+    transform: perspective(20em) rotateX(60deg);
+
+    &:hover {
+      transform: perspective(0em) rotateX(0deg);
+      width: 80vw;
+      height: 80vh;
+      z-index: 10;
+      left: 0%;
+    }
+  }
+
+  .about {
+    left: 0%;
+    background-color: red;
+  }
+
+  .tech {
+    left: 30%;
+    background-color: blue;
+  }
+
+  .projects {
+    left: 60%;
+    background-color: purple;
+  }
+}
