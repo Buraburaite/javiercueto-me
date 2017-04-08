@@ -1,1 +1,0 @@
-*{box-sizing:border-box}body{font-size:20px;font-family:arial}.game-container{width:100vw;height:80vh;perspective:0em}.game-container .platform{width:20%;height:20%;display:inline-block;position:absolute;z-index:1}.game-container .about{left:30%;background-color:red}.game-container .nav-div{width:30px;height:30px;background-color:yellow}
