@@ -236,7 +236,7 @@ a {
     padding-top: 100px;
 }
 
-.download-section {
+.grey-section {
     width: 100%;
     padding: 50px 0;
     color: white;
@@ -246,6 +246,7 @@ a {
     -moz-background-size: cover;
     background-size: cover;
     -o-background-size: cover;
+    text-shadow: 4px 4px black;
 }
 
 @media(min-width:767px) {
@@ -253,7 +254,7 @@ a {
         padding-top: 250px;
     }
 
-    .download-section {
+    .grey-section {
         padding: 100px 0;
     }
 }
