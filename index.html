@@ -137,13 +137,48 @@
     </section>
 
     <!-- Projects Section -->
-    <section id="projects" class="content-section text-center">
+    <section id="projects" class="content-section text-center center-block">
       <div class="grey-section">
         <div class="container">
           <div class="col-lg-8 col-lg-offset-2">
             <h2>Projects</h2>
-            <p>You can download Grayscale for free on the preview page at Start Bootstrap.</p>
-            <a href="http://startbootstrap.com/template-overviews/grayscale/" class="btn btn-default btn-lg">Visit Download Page</a>
+            <div id="myCarousel" class="carousel slide">
+              <!-- Indicators -->
+              <ol class="carousel-indicators">
+                <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+                <li data-target="#myCarousel" data-slide-to="1"></li>
+                <li data-target="#myCarousel" data-slide-to="2"></li>
+              </ol>
+
+              <!-- Wrapper for slides -->
+              <div class="carousel-inner">
+                <div class="item active">
+                  <img class="project-img" src="img/TangoPlus screenshot.png" alt="TangoPlusElectron">
+                </div>
+
+                <div class="item">
+                  <img class="project-img" src="img/Villagers screenshot.png" alt="Villagers">
+                </div>
+
+                <div class="item">
+                  <img class="project-img" src="img/Guesstimation screenshot.png" alt="Guesstimation">
+                </div>
+
+                <div class="item">
+                  <img class="project-img" src="img/Riskteros screenshot.png" alt="Riskteros">
+                </div>
+              </div>
+
+              <!-- Left and right controls -->
+              <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+                <span class="glyphicon glyphicon-chevron-left"></span>
+                <span class="sr-only">Previous</span>
+              </a>
+              <a class="right carousel-control" href="#myCarousel" data-slide="next">
+                <span class="glyphicon glyphicon-chevron-right"></span>
+                <span class="sr-only">Next</span>
+              </a>
+            </div>
           </div>
         </div>
       </div>
