@@ -342,9 +342,30 @@ body {
 
   #myCarousel {
 
-    .project-img {
-      width: 100%;
-      height: auto;
+    .item {
+
+      .project-img {
+        width: 100%;
+        height: auto;
+        background-color: rgba(black, 0.5);
+        border-radius: 4px;
+      }
+
+      &:hover .carousel-caption {
+        // opacity: 1;
+      }
+
+      .carousel-caption {
+        // opacity: 0;
+        // transition: opacity ease-in 1s;
+
+        p {
+          color: $primary;
+          text-shadow: 1px 1px darken(white, 50%);
+          border-radius: 4px;
+          background-color: black;
+        }
+      }
     }
   }
 }
