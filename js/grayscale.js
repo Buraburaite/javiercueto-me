@@ -31,3 +31,12 @@ $(function() {
 $('.navbar-collapse ul li a').click(function() {
     $(".navbar-collapse").collapse('hide');
 });
+
+$(document).scroll(function() {
+  const y = $(this).scrollTop();
+  if (y > $('#education').position().top) {
+    $('#tools div').css('opacity', '1');
+  } else {
+    $('#tools div').css('opacity', '0');
+  }
+});
