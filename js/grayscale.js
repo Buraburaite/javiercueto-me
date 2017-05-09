@@ -34,9 +34,10 @@ $('.navbar-collapse ul li a').click(function() {
 
 $(document).scroll(function() {
   const y = $(this).scrollTop();
-  if (y > $('#education').position().top) {
-    $('#tools div').css('opacity', '1');
+  const tools = $('#tools div');
+  if (y > tools.position().top) {
+    tools.fadeIn();
   } else {
-    $('#tools div').css('opacity', '0');
+    tools.fadeOut();
   }
 });
