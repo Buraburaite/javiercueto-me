@@ -19,25 +19,26 @@ $(document).ready(collapseNavbar);
 // jQuery for page scrolling feature - requires jQuery Easing plugin
 $(function() {
     $('a.page-scroll').bind('click', function(event) {
-        var $anchor = $(this);
+        var anchor = $(this);
         $('html, body').stop().animate({
-            scrollTop: $($anchor.attr('href')).offset().top
-        }, 1500, 'easeInOutExpo');
+            scrollTop: $(anchor.attr('href')).offset().top
+        }, 1200, 'easeInBack');
         event.preventDefault();
+    });
+    //For animated divs
+    $('.animated').each(function() {
+      const anchor = $(this);
+      anchor.stop().animate(
+        {
+          opacity: 0.25
+        },
+        1500,
+        'easeInBack'
+      );
     });
 });
 
 // Closes the Responsive Menu on Menu Item Click
 $('.navbar-collapse ul li a').click(function() {
     $(".navbar-collapse").collapse('hide');
-});
-
-$(document).scroll(function() {
-  const y = $(this).scrollTop();
-  const tools = $('#tools div');
-  if (y > tools.position().top) {
-    tools.fadeIn();
-  } else {
-    tools.fadeOut();
-  }
 });
