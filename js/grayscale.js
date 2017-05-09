@@ -1,44 +1,64 @@
 /*!
- * Start Bootstrap - Grayscale Bootstrap Theme (http://startbootstrap.com)
- * Code licensed under the Apache License v2.0.
- * For details, see http://www.apache.org/licenses/LICENSE-2.0.
- */
+* Start Bootstrap - Grayscale Bootstrap Theme (http://startbootstrap.com)
+* Code licensed under the Apache License v2.0.
+* For details, see http://www.apache.org/licenses/LICENSE-2.0.
+*/
 
 // jQuery to collapse the navbar on scroll
 function collapseNavbar() {
-    if ($(".navbar").offset().top > 50) {
-        $(".navbar-fixed-top").addClass("top-nav-collapse");
-    } else {
-        $(".navbar-fixed-top").removeClass("top-nav-collapse");
-    }
+  if ($(".navbar").offset().top > 50) {
+    $(".navbar-fixed-top").addClass("top-nav-collapse");
+  } else {
+    $(".navbar-fixed-top").removeClass("top-nav-collapse");
+  }
 }
 
-$(window).scroll(collapseNavbar);
+var jWin = $(window);
+jWin.scroll(collapseNavbar);
 $(document).ready(collapseNavbar);
+
+function revealDiv(anchor, triggeredDivs) {
+  var anchorBottom = anchor.offset().top + anchor.outerHeight();
+  var winBottom = jWin.scrollTop() + jWin.height() + 400;
+
+  if (winBottom > anchorBottom) {
+    triggeredDivs.push(anchor.attr('id'));
+    console.log('here');
+    anchor.animate(
+      {
+        opacity: 1
+      },
+      1500
+    );
+  }
+}
 
 // jQuery for page scrolling feature - requires jQuery Easing plugin
 $(function() {
-    $('a.page-scroll').bind('click', function(event) {
-        var anchor = $(this);
-        $('html, body').stop().animate({
-            scrollTop: $(anchor.attr('href')).offset().top
-        }, 1200, 'easeInBack');
-        event.preventDefault();
+  $('a.page-scroll').bind('click', function(event) {
+    var anchor = $(this);
+    $('html, body').stop().animate({
+      scrollTop: $(anchor.attr('href')).offset().top
+    }, 1200, 'easeInBack');
+    event.preventDefault();
+  });
+
+  var triggeredDivs = [];
+  //For animated divs
+  jWin.scroll(function() {
+    $('.content-section').each(function() {
+      var anchor = $(this);
+      var id = anchor.attr('id');
+      if (!triggeredDivs.includes(id)) {
+        revealDiv(anchor, triggeredDivs);
+      }
     });
-    //For animated divs
-    $('.animated').each(function() {
-      const anchor = $(this);
-      anchor.stop().animate(
-        {
-          opacity: 0.25
-        },
-        1500,
-        'easeInBack'
-      );
-    });
+  });
+
+
 });
 
 // Closes the Responsive Menu on Menu Item Click
 $('.navbar-collapse ul li a').click(function() {
-    $(".navbar-collapse").collapse('hide');
+  $(".navbar-collapse").collapse('hide');
 });
