@@ -39,14 +39,14 @@ p {
 }
 
 a {
-  color: $primary;
+  color: $matrix-green;
   -webkit-transition: all .2s ease-in-out;
   -moz-transition: all .2s ease-in-out;
   transition: all .2s ease-in-out;
   &:hover,
   &:focus {
     text-decoration: none;
-    color: darken($primary,20%);
+    color: darken($matrix-green,20%);
   }
 }
 
@@ -278,15 +278,15 @@ a {
 }
 
 .btn-default {
-  border: 1px solid $primary;
-  color: $primary;
+  border: 1px solid $matrix-green;
+  color: $matrix-green;
   background-color: transparent;
   &:hover,
   &:focus {
-    border: 1px solid $primary;
+    border: 1px solid $matrix-green;
     outline: none;
     color: black;
-    background-color: $primary;
+    background-color: $matrix-green;
   }
 }
 
@@ -360,8 +360,8 @@ body {
         // transition: opacity ease-in 1s;
 
         p {
-          color: $primary;
-          text-shadow: 1px 1px darken(white, 50%);
+          padding: 10px;
+          color: $matrix-green;
           border-radius: 4px;
           background-color: black;
         }
