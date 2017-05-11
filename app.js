@@ -7,8 +7,8 @@ const bodyParser   = require('body-parser');
 const layouts      = require('express-ejs-layouts');
 const mongoose     = require('mongoose');
 
-
-mongoose.connect('mongodb://localhost/javiercueto-me');
+require('dotenv').config(); //access environmental variables
+mongoose.connect(process.env.MONGODB_URI);
 
 const app = express();
 
