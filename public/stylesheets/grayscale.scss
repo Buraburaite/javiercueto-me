@@ -39,14 +39,14 @@ p {
 }
 
 a {
-  color: $matrix-green;
+  color: $my-purple;
   -webkit-transition: all .2s ease-in-out;
   -moz-transition: all .2s ease-in-out;
   transition: all .2s ease-in-out;
   &:hover,
   &:focus {
     text-decoration: none;
-    color: darken($matrix-green,20%);
+    color: darken($my-purple,20%);
   }
 }
 
@@ -129,7 +129,7 @@ a {
   padding: 100px 20px;
   text-align: center;
   color: white;
-  background: url(../img/tracks-landscape.jpg) no-repeat bottom center scroll;
+  background: url('../images/tracks-landscape.jpg') no-repeat bottom center scroll;
   background-color: black;
   -webkit-background-size: cover;
   -moz-background-size: cover;
@@ -242,7 +242,7 @@ a {
   width: 100%;
   padding: 50px 0;
   color: white;
-  background: url('../img/brickell-station-2015.jpg') no-repeat center center scroll;
+  background: url('/images/brickell-station-2015.jpg') no-repeat center center scroll;
   background-color: black;
   -webkit-background-size: cover;
   -moz-background-size: cover;
@@ -279,15 +279,15 @@ a {
 }
 
 .btn-default {
-  border: 1px solid $matrix-green;
-  color: $matrix-green;
+  border: 1px solid $my-purple;
+  color: $my-purple;
   background-color: transparent;
   &:hover,
   &:focus {
-    border: 1px solid $matrix-green;
+    border: 1px solid $my-purple;
     outline: none;
     color: black;
-    background-color: $matrix-green;
+    background-color: $my-purple;
   }
 }
 
@@ -362,7 +362,7 @@ body {
 
         p {
           padding: 10px;
-          color: $matrix-green;
+          color: $my-purple;
           border-radius: 4px;
           background-color: black;
         }
