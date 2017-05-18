@@ -64,12 +64,12 @@ $('.navbar-collapse ul li a').click(function() {
 });
 
 //Resize project images
-const jCarousel = $('#myCarousel')
-const jTango = $('#tango-img');
+var jCarousel = $('#myCarousel');
+var jTango = $('#tango-img');
 
-const scaleWithVWidth  = (jel) => jel.width ('100vw').height('auto');
-const scaleWithVHeight = (jel) => jel.width('auto').height('100vh');
-const imgAspectRatio = () => jTango.width() / jTango.height();
+function scaleWithVWidth(jel) { jel.width ('100%').height('auto'); }
+function scaleWithVHeight(jel) { jel.width('auto').height('100%'); }
+function imgAspectRatio() { return jTango.width() / jTango.height(); }
 
 //Strategy (keeping the aspect ratio the same)
 //window is wide and image would fit entirely:    scaleWithVHeight
@@ -77,9 +77,10 @@ const imgAspectRatio = () => jTango.width() / jTango.height();
 //window is tall and image would fit entirely:    scaleWithVWidth
 //window is tall but image would be clipped:      scaleWithVHeight
 //Note: this code /probably/ does not work with vertical videos yet
-const resizeImgToFitWindow = (jImg) => {
-  const winWidth = jWin.width();
-  const winHeight = jWin.height();
+function resizeImgToFitWindow(jImg) {
+  console.log('here2');
+  var winWidth = jWin.width();
+  var winHeight = jWin.height();
   if (winWidth >  winHeight && imgAspectRatio() * winHeight < winWidth) {
       scaleWithVHeight(jImg);
     }
@@ -88,6 +89,8 @@ const resizeImgToFitWindow = (jImg) => {
   }
 
   shrinkBar();
-};
+}
+
+console.log('hihihihihi');
 
 jWin.resize(resizeImgToFitWindow(jTango));
