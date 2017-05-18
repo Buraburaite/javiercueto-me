@@ -342,7 +342,7 @@ body {
 #projects {
 
   #myCarousel {
-
+    height: 80vh;
 
     box-sizing: border-box;
     border: 1px solid pink;
@@ -350,10 +350,28 @@ body {
     .item {
 
       .project-img {
-        width: 100%;
-        height: auto;
         background-color: rgba(black, 0.5);
         border-radius: 4px;
+      }
+
+      #tango-img {
+        width: 100%;
+        height: auto;
+      }
+
+      #villagers-img {
+        width: 100%;
+        height: auto;
+      }
+
+      #guesstimation-img {
+        width: auto;
+        height: 100%;
+      }
+
+      #riskteros-img {
+        width: 100%;
+        height: auto;
       }
 
       &:hover .carousel-caption {

@@ -63,34 +63,34 @@ $('.navbar-collapse ul li a').click(function() {
   $(".navbar-collapse").collapse('hide');
 });
 
-//Resize project images
-var jCarousel = $('#myCarousel');
-var jTango = $('#tango-img');
+// //Resize project images
+// var jCarousel = $('#myCarousel');
+// var jTango = $('#tango-img');
+//
+// function scaleWithVWidth(jel) { jel.width ('100%').height('auto'); }
+// function scaleWithVHeight(jel) { jel.width('auto').height('100%'); }
+// function imgAspectRatio() { return jTango.width() / jTango.height(); }
+//
+// //Strategy (keeping the aspect ratio the same)
+// //window is wide and image would fit entirely:    scaleWithVHeight
+// //window is wide but image would be clipped:      scaleWithVWidth
+// //window is tall and image would fit entirely:    scaleWithVWidth
+// //window is tall but image would be clipped:      scaleWithVHeight
+// //Note: this code /probably/ does not work with vertical videos yet
+// function resizeImgToFitWindow() {
+//   console.log('here2');
+//   var winWidth = jWin.width();
+//   var winHeight = jWin.height();
+//   if ((winWidth > winHeight) && (imgAspectRatio() * winHeight < winWidth)) {
+//       scaleWithVHeight(jTango);
+//     }
+//   else {
+//     scaleWithVWidth(jTango);
+//   }
+// }
+//
+// jWin.resize(resizeImgToFitWindow);
 
-function scaleWithVWidth(jel) { jel.width ('100%').height('auto'); }
-function scaleWithVHeight(jel) { jel.width('auto').height('100%'); }
-function imgAspectRatio() { return jTango.width() / jTango.height(); }
-
-//Strategy (keeping the aspect ratio the same)
-//window is wide and image would fit entirely:    scaleWithVHeight
-//window is wide but image would be clipped:      scaleWithVWidth
-//window is tall and image would fit entirely:    scaleWithVWidth
-//window is tall but image would be clipped:      scaleWithVHeight
-//Note: this code /probably/ does not work with vertical videos yet
-function resizeImgToFitWindow(jImg) {
-  console.log('here2');
-  var winWidth = jWin.width();
-  var winHeight = jWin.height();
-  if (winWidth >  winHeight && imgAspectRatio() * winHeight < winWidth) {
-      scaleWithVHeight(jImg);
-    }
-  else {
-    scaleWithVWidth(jImg);
-  }
-
-  shrinkBar();
-}
-
-console.log('hihihihihi');
-
-jWin.resize(resizeImgToFitWindow(jTango));
+// var jCarousel = $('#myCarousel');
+// jCarousel.height = $('#guesstimation-img').height();
+// console.log($('#tango-img').height() + 'px');
