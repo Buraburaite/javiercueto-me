@@ -361,33 +361,12 @@ body {
         text-shadow: none;
       }
 
-      // #tango-img {
-      //   width: 100%;
-      //   height: auto;
-      // }
-      //
-      // #villagers-img {
-      //   width: 100%;
-      //   height: auto;
-      // }
-      //
-      // #guesstimation-img {
-      //   width: auto;
-      //   height: 100%;
-      // }
-      //
-      // #riskteros-img {
-      //   width: 100%;
-      //   height: auto;
-      // }
-
-      &:hover .carousel-caption {
-        // opacity: 1;
-      }
-
       .carousel-caption {
-        // opacity: 0;
-        // transition: opacity ease-in 1s;
+
+        h3 {
+          color: $my-purple;
+          text-shadow: 2px 2px black;
+        }
 
         p {
           padding: 10px;
@@ -395,6 +374,13 @@ body {
           border-radius: 4px;
           background-color: black;
         }
+      }
+    }
+
+    #guesstimation-item {
+
+      h3 {
+        color: $my-purple;
       }
     }
   }
