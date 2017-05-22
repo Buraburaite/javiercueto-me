@@ -354,25 +354,23 @@ body {
         border-radius: 4px;
       }
 
-      marquee {
-        color: $my-purple;
-        font-weight: bolder;
-        background-color: white;
-        text-shadow: none;
-      }
-
       .carousel-caption {
 
         h3 {
           color: $my-purple;
+          font-size: 8vw;
           text-shadow: 2px 2px black;
         }
 
-        p {
-          padding: 10px;
+        marquee {
           color: $my-purple;
-          border-radius: 4px;
-          background-color: black;
+          font-size: 6vw;
+          font-weight: bolder;
+          background-color: white;
+          text-shadow: none;
+          border: 1px solid black;
+          border-left: none;
+          border-right: none;
         }
       }
     }
@@ -380,6 +378,7 @@ body {
     #guesstimation-item {
 
       h3 {
+        font-size: 6vw;
         color: $my-purple;
       }
     }
