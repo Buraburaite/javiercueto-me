@@ -342,7 +342,7 @@ body {
 #projects {
 
   #myCarousel {
-    height: 80vh;
+    height: auto;
 
     box-sizing: border-box;
     border: 1px solid pink;
@@ -354,25 +354,25 @@ body {
         border-radius: 4px;
       }
 
-      #tango-img {
-        width: 100%;
-        height: auto;
-      }
-
-      #villagers-img {
-        width: 100%;
-        height: auto;
-      }
-
-      #guesstimation-img {
-        width: auto;
-        height: 100%;
-      }
-
-      #riskteros-img {
-        width: 100%;
-        height: auto;
-      }
+      // #tango-img {
+      //   width: 100%;
+      //   height: auto;
+      // }
+      //
+      // #villagers-img {
+      //   width: 100%;
+      //   height: auto;
+      // }
+      //
+      // #guesstimation-img {
+      //   width: auto;
+      //   height: 100%;
+      // }
+      //
+      // #riskteros-img {
+      //   width: 100%;
+      //   height: auto;
+      // }
 
       &:hover .carousel-caption {
         // opacity: 1;
