@@ -17,20 +17,6 @@ var jWin = $(window);
 jWin.scroll(collapseNavbar);
 $(document).ready(collapseNavbar);
 
-function revealDiv(anchor, triggeredDivs) {
-  var anchorBottom = anchor.offset().top + anchor.outerHeight();
-  var winBottom = jWin.scrollTop() + jWin.height();
-
-  if (winBottom > anchorBottom) {
-    triggeredDivs.push(anchor.attr('id'));
-    anchor.animate(
-      {
-        opacity: 1
-      },
-      1500
-    );
-  }
-}
 
 // jQuery for page scrolling feature - requires jQuery Easing plugin
 $(function() {
@@ -42,16 +28,37 @@ $(function() {
     event.preventDefault();
   });
 
-  var triggeredDivs = [];
-  //For animated divs
+// Reveal .content-section divs as you scroll down to them
+  var totalDivsToReveal = $('.content-section').length;
+  var revealedDivs = [];
+
+  // Whenever scrolling happens...
   jWin.scroll(function() {
-    $('.content-section').each(function() {
-      var anchor = $(this);
-      var id = anchor.attr('id');
-      if (!triggeredDivs.includes(id)) {
-        revealDiv(anchor, triggeredDivs);
-      }
-    });
+    // ...check if there are still unrevealed divs...
+    if (totalDivsToReveal > revealedDivs.length) {
+      // ...if so, then for each div...
+      $('.content-section').each(function() {
+        var anchor = $(this);
+        var id = anchor.attr('id');
+        // ...if the div has yet to be revealed...
+        if (!revealedDivs.includes(id)) {
+          // ...check if the page has scrolled far enough down to reveal...
+          var anchorTop = anchor.offset().top;// + anchor.outerHeight();
+          var winBottom = jWin.scrollTop() + jWin.height();
+          // ...if so, then reveal the div...
+          if (winBottom > anchorTop + 400) {
+            anchor.animate(
+              {
+                opacity: 1
+              },
+              1500
+            );
+            // ...and list it as a revealed div.
+            revealedDivs.push(id);
+          }
+        }
+      });
+    }
   });
 
 
