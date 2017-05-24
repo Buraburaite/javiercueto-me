@@ -343,6 +343,20 @@ body {
   -webkit-tap-highlight-color: rgba(white, 0.2);
 }
 
+$marquee-speed: 20s;
+
+// Add padding on left so text starts
+// on the right of the frame
+@keyframes start-from-right {
+  from { padding-left: 100% }
+  to   { padding-left: 0 }
+}
+// Moves the text
+@keyframes slide-left {
+  from { transform: translateX(0%) }
+  to   { transform: translateX(-100%) }
+}
+
 #projects {
   display: flex;
   justify-content: center;
@@ -364,29 +378,23 @@ body {
       }
 
       .carousel-caption {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
 
         h3 {
           color: $my-purple;
           font-size: 8vw;
           text-shadow: 2px 2px black;
-        }
 
-        $marquee-speed: 20s;
-
-        // Add padding on left so text starts
-        // on the right of the frame
-        @keyframes start-from-right {
-          from { padding-left: 100% }
-          to   { padding-left: 0 }
-        }
-        // Moves the text
-        @keyframes slide-left {
-          from { transform: translateX(0%) }
-          to   { transform: translateX(-100%) }
+          @media(min-width:768px) {
+            font-size: 4vw;
+          }
         }
 
         .marquee-frame {
-          width: auto;
+          width: 100%;
           height: auto;
           background-color: white;
           border: 1px solid black;
@@ -421,6 +429,26 @@ body {
       h3 {
         font-size: 6vw;
         color: $my-purple;
+
+        @media(min-width:768px) {
+          font-size: 3vw;
+        }
+      }
+    }
+
+    #riskteros-item {
+
+      $riskteros-speed: 6s;
+
+      .marquee-frame {
+
+        .marquee-inner {
+          animation: start-from-right $riskteros-speed linear infinite;
+
+          p {
+            animation: slide-left $riskteros-speed linear infinite;
+          }
+        }
       }
     }
   }
