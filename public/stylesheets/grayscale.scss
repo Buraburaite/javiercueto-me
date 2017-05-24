@@ -367,7 +367,21 @@ body {
           text-shadow: 2px 2px black;
         }
 
-        .marquee-div {
+        $marquee-speed: 20s;
+
+        // Add padding on left so text starts
+        // on the right of the frame
+        @keyframes start-from-right {
+          from { padding-left: 100% }
+          to   { padding-left: 0 }
+        }
+        // Moves the text
+        @keyframes slide-left {
+          from { transform: translateX(0%) }
+          to   { transform: translateX(-100%) }
+        }
+
+        .marquee-frame {
           width: auto;
           height: auto;
           background-color: white;
@@ -376,23 +390,18 @@ body {
           border-right: none;
           overflow: hidden;
 
-          p {
-            width: auto;
-            height: auto;
-            margin: 0;
-            white-space: nowrap;
-            color: $my-purple;
-            font-size: 6vw;
-            font-weight: bolder;
-            text-shadow: none;
+          .marquee-inner {
+            animation: start-from-right $marquee-speed linear infinite;
 
-            /* Starting position */
-            transform: translateX(-100%);
-            animation: marquee 6s linear infinite;
-
-            @keyframes marquee {
-              0%   { transform: translateX(100%); }
-              100% { transform: translateX(-100%); }
+            p {
+              display: inline-block;
+              margin: 0;
+              white-space: nowrap;
+              color: $my-purple;
+              font-size: 6vw;
+              font-weight: bolder;
+              text-shadow: none;
+              animation: slide-left $marquee-speed linear infinite;
             }
           }
         }
