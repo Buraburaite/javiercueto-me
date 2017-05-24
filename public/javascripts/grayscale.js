@@ -20,15 +20,21 @@ $(document).ready(collapseNavbar);
 
 // jQuery for page scrolling feature - requires jQuery Easing plugin
 $(function() {
+  // Make a.page-scroll elements into smooth scrolling buttons
   $('a.page-scroll').bind('click', function(event) {
-    var anchor = $(this);
+
+    var targetDiv = $($(this).attr('href'));
+    var scrollToVal = (targetDiv.offset().top +
+    parseInt(targetDiv.css('padding-top')) -
+    $('nav').outerHeight());
+
     $('html, body').stop().animate({
-      scrollTop: $(anchor.attr('href')).offset().top
+      scrollTop: scrollToVal
     }, 1200, 'easeInBack');
     event.preventDefault();
   });
 
-// Reveal .content-section divs as you scroll down to them
+  // Reveal .content-section divs as you scroll down to them
   var totalDivsToReveal = $('.content-section').length;
   var revealedDivs = [];
 
@@ -38,16 +44,16 @@ $(function() {
     if (totalDivsToReveal > revealedDivs.length) {
       // ...if so, then for each div...
       $('.content-section').each(function() {
-        var anchor = $(this);
-        var id = anchor.attr('id');
+        var targetDiv = $(this);
+        var id = targetDiv.attr('id');
         // ...if the div has yet to be revealed...
         if (!revealedDivs.includes(id)) {
           // ...check if the page has scrolled far enough down to reveal...
-          var anchorTop = anchor.offset().top;// + anchor.outerHeight();
+          var targetDivTop = targetDiv.offset().top;
           var winBottom = jWin.scrollTop() + jWin.height();
           // ...if so, then reveal the div...
-          if (winBottom > anchorTop + 400) {
-            anchor.animate(
+          if (winBottom > targetDivTop + 400) {
+            targetDiv.animate(
               {
                 opacity: 1
               },
