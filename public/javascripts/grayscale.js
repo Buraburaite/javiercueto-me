@@ -42,7 +42,7 @@ $(function() {
   If the contents of a non-text section (i.e. a .grey-section's non-text
   contents) is too large, then shrink it to fit
   ====*/
-  var maxAllowableHeight = jWin.height() * 0.6;
+  var maxAllowableHeight = jWin.height() * 0.7;
   $('.shrink-to-fit').each(function() {
     var shrinkMe = $(this);
     var origHeight = shrinkMe.height();
