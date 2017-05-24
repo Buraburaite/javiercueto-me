@@ -27,9 +27,10 @@ $(function() {
   $('a.page-scroll').bind('click', function(event) {
 
     var targetDiv = $($(this).attr('href'));
-    var scrollToVal = (targetDiv.offset().top +
-    parseInt(targetDiv.css('padding-top')) -
-    $('nav').outerHeight());
+    var navHeight = 50;
+    var scrollToVal = targetDiv.offset().top +
+    parseInt(targetDiv.css('padding-top'))
+    - navHeight;
 
     $('html, body').stop().animate({
       scrollTop: scrollToVal
