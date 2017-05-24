@@ -344,9 +344,13 @@ body {
 }
 
 #projects {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 
   #project-carousel {
-    width: 100%;
+    display: inline-block;
+    width: 80%;
     height: auto;
 
     // box-sizing: border-box;
@@ -402,6 +406,10 @@ body {
               font-weight: bolder;
               text-shadow: none;
               animation: slide-left $marquee-speed linear infinite;
+
+              @media(min-width:768px) {
+                font-size: 2vw;
+              }
             }
           }
         }

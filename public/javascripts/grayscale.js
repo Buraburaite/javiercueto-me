@@ -42,18 +42,18 @@ $(function() {
   contents) is too large, then shrink it to fit
   ====*/
   var maxAllowableHeight = jWin.height() * 0.6;
-  jWin.resize(function() {
-
-    $('.shrink-to-fit').each(function() {
-      var shrinkMe = $(this);
-      var origHeight = shrinkMe.height();
-      var origWidth  = shrinkMe.width();
-      if (origHeight > maxAllowableHeight) {
-        var shrinkScale = maxAllowableHeight / origHeight;
-        shrinkMe.height(origHeight * shrinkScale);
-        shrinkMe.width (origWidth  * shrinkScale);
+  $('.shrink-to-fit').each(function() {
+    var shrinkMe = $(this);
+    var origHeight = shrinkMe.height();
+    var origWidth  = shrinkMe.width();
+    if (origHeight > maxAllowableHeight) {
+      var shrinkScale = maxAllowableHeight / origHeight;
+      shrinkMe.height(origHeight * shrinkScale);
+      shrinkMe.width (origWidth  * shrinkScale);
+      if (shrinkMe.attr('id') === "project-carousel") {
+        console.log("projects resized");
       }
-    });
+    }
   });
 
   // Reveal .content-section divs as you scroll down to them
