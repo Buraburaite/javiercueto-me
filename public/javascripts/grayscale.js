@@ -1,8 +1,11 @@
 /*!
 * Start Bootstrap - Grayscale Bootstrap Theme (http://startbootstrap.com)
 * Code licensed under the Apache License v2.0.
-* For details, see http://www.apache.org/licenses/LICENSE-2.0.
+* For de  tails, see http://www.apache.org/licenses/LICENSE-2.0.
 */
+
+// Modifications and additions have been made by Javier Cueto, 2017
+// Hosted at javiercueto.me
 
 // jQuery to collapse the navbar on scroll
 function collapseNavbar() {
@@ -34,9 +37,22 @@ $(function() {
     event.preventDefault();
   });
 
+  /*====
+  If the contents of a non-text section (i.e. a .grey-section's non-text
+  contents) is too large, then shrink it to fit
+  ====*/
+  var maxAllowableHeight = jWin.height() * 0.6;
+  $('#tools-img, #myCarousel').each(function() {
+    var divToShrink = $(this);
+    if (divToShrink.outerHeight() > maxAllowableHeight) {
+      divToShrink.height(maxAllowableHeight);
+    }
+  });
+
   // Reveal .content-section divs as you scroll down to them
   var totalDivsToReveal = $('.content-section').length;
   var revealedDivs = [];
+  var approachDistance = jWin.height() * 0.4;
 
   // Whenever scrolling happens...
   jWin.scroll(function() {
@@ -51,8 +67,8 @@ $(function() {
           // ...check if the page has scrolled far enough down to reveal...
           var targetDivTop = targetDiv.offset().top;
           var winBottom = jWin.scrollTop() + jWin.height();
-          // ...if so, then reveal the div...
-          if (winBottom > targetDivTop + 400) {
+          // ...if so, then reveal the div as you approach it...
+          if (winBottom > targetDivTop + approachDistance) {
             targetDiv.animate(
               {
                 opacity: 1
@@ -66,7 +82,6 @@ $(function() {
       });
     }
   });
-
 
 });
 
