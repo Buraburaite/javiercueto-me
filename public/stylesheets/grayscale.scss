@@ -346,6 +346,7 @@ body {
 #projects {
 
   #project-carousel {
+    width: 100%;
     height: auto;
 
     // box-sizing: border-box;
@@ -366,15 +367,34 @@ body {
           text-shadow: 2px 2px black;
         }
 
-        marquee {
-          color: $my-purple;
-          font-size: 6vw;
-          font-weight: bolder;
+        .marquee-div {
+          width: auto;
+          height: auto;
           background-color: white;
-          text-shadow: none;
           border: 1px solid black;
           border-left: none;
           border-right: none;
+          overflow: hidden;
+
+          p {
+            width: auto;
+            height: auto;
+            margin: 0;
+            white-space: nowrap;
+            color: $my-purple;
+            font-size: 6vw;
+            font-weight: bolder;
+            text-shadow: none;
+
+            /* Starting position */
+            transform: translateX(-100%);
+            animation: marquee 6s linear infinite;
+
+            @keyframes marquee {
+              0%   { transform: translateX(100%); }
+              100% { transform: translateX(-100%); }
+            }
+          }
         }
       }
     }
