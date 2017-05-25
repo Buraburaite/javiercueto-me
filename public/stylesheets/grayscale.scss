@@ -242,16 +242,28 @@ a {
   opacity: 0;
 }
 
-.grey-section {
-  width: 100%;
-  padding: 50px 0;
-  color: white;
+#tools-bg {
   background: url('/images/brickell-station-2015.jpg') no-repeat center center scroll;
   background-color: black;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   background-size: cover;
   -o-background-size: cover;
+}
+
+#projects-bg {
+  background: url('/images/inside-metrorail.png') no-repeat center center scroll;
+  background-color: black;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  background-size: cover;
+  -o-background-size: cover;
+}
+
+.grey-section {
+  width: 100%;
+  padding: 50px 0;
+  color: white;
   text-shadow: 4px 4px black;
 }
 
