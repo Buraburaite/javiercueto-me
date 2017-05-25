@@ -42,20 +42,23 @@ $(function() {
   If the contents of a non-text section (i.e. a .grey-section's non-text
   contents) is too large, then shrink it to fit
   ====*/
-  var maxAllowableHeight = jWin.height() * 0.7;
-  $('.shrink-to-fit').each(function() {
-    var shrinkMe = $(this);
-    var origHeight = shrinkMe.height();
-    var origWidth  = shrinkMe.width();
-    if (origHeight > maxAllowableHeight) {
-      var shrinkScale = maxAllowableHeight / origHeight;
-      shrinkMe.height(origHeight * shrinkScale);
-      shrinkMe.width (origWidth  * shrinkScale);
-      if (shrinkMe.attr('id') === "project-carousel") {
-        console.log("projects resized");
+  function shrinkToFit() {
+
+    var maxAllowableHeight = jWin.height() * 0.7;
+    $('.shrink-to-fit').each(function() {
+      var shrinkMe = $(this);
+      var origHeight = shrinkMe.height();
+      var origWidth  = shrinkMe.width();
+      if (origHeight > maxAllowableHeight) {
+        var shrinkScale = maxAllowableHeight / origHeight;
+        shrinkMe.height(origHeight * shrinkScale);
+        shrinkMe.width (origWidth  * shrinkScale);
       }
-    }
-  });
+    });
+  }
+  // Call shrinkToFit on load, and when window resizes
+  shrinkToFit();
+  jWin.resize(shrinkToFit);
 
   // Reveal .content-section divs as you scroll down to them
   var totalDivsToReveal = $('.content-section').length;
