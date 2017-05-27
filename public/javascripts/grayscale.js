@@ -7,23 +7,25 @@
 // Modifications and additions have been made by Javier Cueto, 2017
 // Hosted at javiercueto.me
 
-// jQuery to collapse the navbar on scroll
+var jWin = $(window);
+var navbar = $('.navbar');
+// collapse the navbar on scroll
 function collapseNavbar() {
-  if ($(".navbar").offset().top > 50) {
-    $(".navbar-fixed-top").addClass("top-nav-collapse");
+  if (navbar.offset().top > 50) {
+    navbar.addClass("top-nav-collapse");
   } else {
-    $(".navbar-fixed-top").removeClass("top-nav-collapse");
+    navbar.removeClass("top-nav-collapse");
   }
 }
-
-var jWin = $(window);
 jWin.scroll(collapseNavbar);
-$(document).ready(collapseNavbar);
 
-
-// jQuery for page scrolling feature - requires jQuery Easing plugin
+// On document.ready...
 $(function() {
-  // Make a.page-scroll elements into smooth scrolling buttons
+
+  // ...collapse the navbar, if necessary...
+  collapseNavbar();
+
+  // ...turn all page-scroll anchors into smooth scrolling buttons...
   $('a.page-scroll').bind('click', function(event) {
 
     var targetDiv = $($(this).attr('href'));
@@ -40,7 +42,7 @@ $(function() {
 
   /*====
   If the contents of a non-text section (i.e. a .grey-section's non-text
-  contents) is too large, then shrink it to fit
+  contents) is too large to fit in the window, then shrink it to fit
   ====*/
   function shrinkToFit() {
 
@@ -56,16 +58,17 @@ $(function() {
       }
     });
   }
-  // Call shrinkToFit on load, and when window resizes
+  // ...call shrinkToFit immediately, and when the window resizes...
   shrinkToFit();
   jWin.resize(shrinkToFit);
 
-  // Reveal .content-section divs as you scroll down to them
+  // ...reveal .content-section divs as the user scrolls down to them...
   var totalDivsToReveal = $('.content-section').length;
   var revealedDivs = [];
   var approachDistance = jWin.height() * 0.4;
 
-  // Whenever scrolling happens...
+
+  // ...whenever scrolling happens...
   jWin.scroll(function() {
     // ...check if there are still unrevealed divs...
     if (totalDivsToReveal > revealedDivs.length) {
