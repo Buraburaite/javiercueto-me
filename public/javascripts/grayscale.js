@@ -26,7 +26,7 @@ $(() => {
   collapseNavbar();
 
   // ...turn all page-scroll anchors into smooth scrolling buttons...
-  $('a.page-scroll').bind('click', (e) => {
+  $('a.page-scroll').bind('click', function(e) {
 
     const targetDiv = $($(this).attr('href'));
     const navHeight = 50;
@@ -73,8 +73,9 @@ $(() => {
     // ...check if there are still unrevealed divs...
     if (totalDivsToReveal > revealedDivs.length) {
       // ...if so, then for each div...
-      $('.content-section').each(() => {
+      $('.content-section').each(function() {
         const targetDiv = $(this);
+        console.log(targetDiv);
         const id = targetDiv.attr('id');
         // ...if the div has yet to be revealed...
         if (!revealedDivs.includes(id)) {
