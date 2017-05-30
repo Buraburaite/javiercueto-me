@@ -75,7 +75,6 @@ $(() => {
       // ...if so, then for each div...
       $('.content-section').each(function() {
         const targetDiv = $(this);
-        console.log(targetDiv);
         const id = targetDiv.attr('id');
         // ...if the div has yet to be revealed...
         if (!revealedDivs.includes(id)) {
