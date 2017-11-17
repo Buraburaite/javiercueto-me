@@ -34,14 +34,13 @@ const shrinkToFit = () => {
   $('.shrink-to-fit').each(function() {
     const shrinkMe = $(this);
     const origHeight = shrinkMe.height();
-    const origWidth  = shrinkMe.width();
     if (origHeight > maxAllowableHeight) {
+      console.log('shrinking');
       const shrinkScale = maxAllowableHeight / origHeight;
       shrinkMe.height(origHeight * shrinkScale);
-      shrinkMe.width (origWidth  * shrinkScale);
     }
   });
-}
+};
 
 // This has to do with revealing divs as you scroll
 const totalDivsToReveal = $('.content-section').length;
@@ -80,10 +79,10 @@ const checkReveal = () => {
 $(() => {
 
   // ...call shrinkToFit immediately...
-  shrinkToFit();
+  // shrinkToFit();
 
   // ...have shrinkToFit happen on window resize as well...
-  jWin.resize(shrinkToFit);
+  // jWin.resize(shrinkToFit);
 
   // ...collapse the navbar, if necessary...
   collapseNavbar();
@@ -94,8 +93,7 @@ $(() => {
     const targetDiv = $($(this).attr('href'));
     const navHeight = 50;
     const scrollToVal = targetDiv.offset().top +
-    parseInt(targetDiv.css('padding-top'))
-    - navHeight;
+    parseInt(targetDiv.css('padding-top')) - navHeight;
 
     $('html, body').stop().animate({
       scrollTop: scrollToVal
@@ -110,7 +108,6 @@ let fire = true;
 jWin.on('scroll', () => {
   if (fire) {
     fire = false;
-    console.log('fired');
     collapseNavbar();
     checkReveal();
     setTimeout(() => fire = true, 50);
