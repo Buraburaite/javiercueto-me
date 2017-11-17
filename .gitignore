@@ -1,0 +1,4 @@
+node_modules/
+IgnoreThis/
+
+.DS_Store

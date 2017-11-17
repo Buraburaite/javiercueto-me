@@ -1,1 +1,3 @@
-# Portfolio site for Javier Cueto, hosted at [javiercueto.me](http://javiercueto.me)
+# Portfolio site for Javier Cueto, Web Developer
+
+Hosted at [javiercueto.me](http://javiercueto.me)
