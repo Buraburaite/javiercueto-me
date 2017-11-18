@@ -24,27 +24,6 @@ const collapseNavbar = () => {
   }
 };
 
-<<<<<<< HEAD
-/*====
-If the contents of a non-text section (i.e. a .grey-section's non-text
-contents) is too large to fit in the window, then shrink it to fit
-====*/
-const shrinkToFit = () => {
-
-  const maxAllowableHeight = jWin.height() * 0.7;
-  $('.shrink-to-fit').each(function() {
-    const shrinkMe = $(this);
-    const origHeight = shrinkMe.height();
-    if (origHeight > maxAllowableHeight) {
-      console.log('shrinking');
-      const shrinkScale = maxAllowableHeight / origHeight;
-      shrinkMe.height(origHeight * shrinkScale);
-    }
-  });
-};
-
-=======
->>>>>>> 73d0ddeca51fff7efe86eb1f56ea11dbdd8581d2
 // This has to do with revealing divs as you scroll
 const totalDivsToReveal = $('.content-section').length;
 const revealedDivs = [];
@@ -81,15 +60,6 @@ const checkReveal = () => {
 // On document.ready...
 $(() => {
 
-<<<<<<< HEAD
-  // ...call shrinkToFit immediately...
-  // shrinkToFit();
-
-  // ...have shrinkToFit happen on window resize as well...
-  // jWin.resize(shrinkToFit);
-
-=======
->>>>>>> 73d0ddeca51fff7efe86eb1f56ea11dbdd8581d2
   // ...collapse the navbar, if necessary...
   collapseNavbar();
 
